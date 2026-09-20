@@ -36,7 +36,14 @@ LOG EVENT(Into system standard outputs; String($result.answers.category.choice)+
 ## Documentation
 
 Learn what TypeSafe can do in the [TypeSafe docs](https://docs.typesafe.ai/).
-See [`Client`](Project/Sources/Classes/Client.4dm) for API options and defaults.
+
+Every class of the component is documented in [Documentation/Classes](Documentation/Classes):
+start with [`Client`](Documentation/Classes/Client.md) for the options and defaults, and
+[`Questions`](Documentation/Classes/Questions.md) for the question set.
+
+This component is a port, and it mirrors the JavaScript SDK release it follows, `0.6.0`.
+[The parity record](Documentation/parity.md) compares the two in full: what matches, what is
+deliberately 4D-shaped, and what is not implemented.
 
 ## 4D usage
 
@@ -187,10 +194,10 @@ process, which is the very thing a callback avoids. Omit the callbacks to get re
 
 | Class | Properties |
 |-------|------------|
-| `Result` | Base class: `success`, `error`, `errors`, `status`, `requestId`, `rawBody`; `throwIfError()` |
-| `SystemOneResult` | `answers`, `usage`, `model`, `data`; `answer($name)` |
-| `ModelsListResult` | `models` (collection of `ModelCard`) |
-| `ModelCard` | `name`, `description`, `releaseDate` |
+| [`Result`](Documentation/Classes/Result.md) | Base class: `success`, `error`, `errors`, `status`, `requestId`, `rawBody`; `throwIfError()` |
+| [`SystemOneResult`](Documentation/Classes/SystemOneResult.md) | `answers`, `usage`, `model`, `data`; `answer($name)` |
+| [`ModelsListResult`](Documentation/Classes/ModelsListResult.md) | `models` (collection of `ModelCard`) |
+| [`ModelCard`](Documentation/Classes/ModelCard.md) | `name`, `description`, `releaseDate` |
 
 A synchronous call throws on failure, so the result it returns always has `success`
 true. An asynchronous call cannot throw into the caller, so it hands the same result
@@ -203,15 +210,15 @@ Failures are raised with `throw`, so wrap calls in `Try` / `Catch` and read
 
 | Class | Raised when |
 |-------|-------------|
-| `TypeSafeError` | Base class: bad configuration, empty or malformed questions |
-| `APIError` | Non-2xx response after retries; adds `status`, `body`, `headers`, `url`, `requestId`, `retryAfterMs` (-1 when absent) and `isBadRequest()` / `isAuthentication()` / `isPermissionDenied()` / `isNotFound()` / `isTimeout()` / `isUnprocessable()` / `isRateLimit()` / `isServer()` |
-| `TransportError` | Base class for delivery failures |
-| `ConnectionError` | The request could not reach the API |
-| `TimeoutError` | No response within `timeout`; adds `timeoutMs` |
+| [`TypeSafeError`](Documentation/Classes/TypeSafeError.md) | Base class: bad configuration, empty or malformed questions |
+| [`APIError`](Documentation/Classes/APIError.md) | Non-2xx response after retries; adds `status`, `body`, `headers`, `url`, `requestId`, `retryAfterMs` (-1 when absent) and `isBadRequest()` / `isAuthentication()` / `isPermissionDenied()` / `isNotFound()` / `isTimeout()` / `isUnprocessable()` / `isRateLimit()` / `isServer()` |
+| [`TransportError`](Documentation/Classes/TransportError.md) | Base class for delivery failures |
+| [`ConnectionError`](Documentation/Classes/ConnectionError.md) | The request could not reach the API |
+| [`TimeoutError`](Documentation/Classes/TimeoutError.md) | No response within `timeout`; adds `timeoutMs` |
 
 ### Retries
 
-`cs.jev.RetryPolicy` holds the policy: HTTP 408, 429 and every 5xx are retried, as
+[`cs.jev.RetryPolicy`](Documentation/Classes/RetryPolicy.md) holds the policy: HTTP 408, 429 and every 5xx are retried, as
 are connection errors and timeouts. Delays use capped exponential backoff with
 jitter, and honour `retry-after-ms` or `Retry-After` when the server sends a
 delay within `maxRetryAfterMs`. Override per client or per call:
@@ -220,16 +227,3 @@ delay within `maxRetryAfterMs`. Override per client or per call:
 var $client:=cs.jev.Client.new({retry: {maxRetries: 4; backoffInitialMs: 250}})
 var $result:=$client.systemOne($state; {questions: $questions; retry: {maxRetries: 0}})
 ```
-
-### Differences from the JavaScript SDK
-
-- Asynchronous work is 4D-shaped: no `Promise` and no `APIPromise`, so there is no
-  `asResponse()` / `withResponse()`. A result carries `status` and `requestId` itself,
-  and a completion handler replaces `await`, see
-  [Asynchronous calls](#asynchronous-calls).
-- There is no `AbortSignal`, so no user-abort error. An asynchronous call returns its
-  `4D.HTTPRequest`, whose `.terminate()` is the nearest equivalent.
-- Per-status error subclasses (`NotFoundError`, `RateLimitError`, …) are not
-  separate classes; use `APIError.status` or its `is*()` predicates.
-- `Retry-After` is read as a number of seconds or milliseconds; HTTP-date
-  values fall back to exponential backoff.
