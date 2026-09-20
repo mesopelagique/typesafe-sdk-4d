@@ -1,0 +1,34 @@
+{
+	"demo": {
+		"methods": [
+			"_demoTypesafe",
+			"_demoTypesafeAsync",
+			"_demoTypesafeReceive",
+			"_demoTypesafeSend"
+		]
+	},
+	"errors": {
+		"classes": [
+			"APIError",
+			"ConnectionError",
+			"TimeoutError",
+			"TransportError",
+			"TypeSafeError"
+		]
+	},
+	"results": {
+		"classes": [
+			"ModelsListResult",
+			"Result",
+			"SystemOneResult"
+		]
+	},
+	"utils": {
+		"classes": [
+			"_Constants",
+			"_Env",
+			"_Utils"
+		]
+	},
+	"trash": {}
+}

@@ -1,0 +1,1300 @@
+{
+	"_method_": {},
+	"cs.jev": {
+		"TypeSafeError": {
+			"new()": {
+				"Syntax": "**.new**( *message* : Text; *cause* : Variant )",
+				"Params": [
+					[
+						"message",
+						"Text",
+						"->"
+					],
+					[
+						"cause",
+						"Variant",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"_Env": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"Logger": {
+			"new()": {
+				"Syntax": "**.new**( *level* : Text; *source* : Text )",
+				"Params": [
+					[
+						"level",
+						"Text",
+						"->"
+					],
+					[
+						"source",
+						"Text",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"RetryPolicy": {
+			"new()": {
+				"Syntax": "**.new**( *overrides* : Object )",
+				"Params": [
+					[
+						"overrides",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"Models": {
+			"new()": {
+				"Syntax": "**.new**( *client* : cs.jev.Client )",
+				"Params": [
+					[
+						"client",
+						"cs.jev.Client",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"_Utils": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"Result": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"TimeoutError": {
+			"new()": {
+				"Syntax": "**.new**( *timeoutMs* : Integer; *cause* : Variant )",
+				"Params": [
+					[
+						"timeoutMs",
+						"Integer",
+						"->"
+					],
+					[
+						"cause",
+						"Variant",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"APIError": {
+			"new()": {
+				"Syntax": "**.new**( *message* : Text; *status* : Integer; *body* : Variant; *headers* : Object; *url* : Text; *cause* : Variant )",
+				"Params": [
+					[
+						"message",
+						"Text",
+						"->"
+					],
+					[
+						"status",
+						"Integer",
+						"->"
+					],
+					[
+						"body",
+						"Variant",
+						"->"
+					],
+					[
+						"headers",
+						"Object",
+						"->"
+					],
+					[
+						"url",
+						"Text",
+						"->"
+					],
+					[
+						"cause",
+						"Variant",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"TransportError": {
+			"new()": {
+				"Syntax": "**.new**( *message* : Text; *cause* : Variant )",
+				"Params": [
+					[
+						"message",
+						"Text",
+						"->"
+					],
+					[
+						"cause",
+						"Variant",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"_AsyncOptions": {
+			"new()": {
+				"Syntax": "**.new**( *options* : Object; *client* : cs.jev.Client; *callbacks* : Object; *resultType* : 4D.Class; *tag* : Text; *url* : Text; *timeoutMs* : Integer )",
+				"Params": [
+					[
+						"options",
+						"Object",
+						"->"
+					],
+					[
+						"client",
+						"cs.jev.Client",
+						"->"
+					],
+					[
+						"callbacks",
+						"Object",
+						"->"
+					],
+					[
+						"resultType",
+						"4D.Class",
+						"->"
+					],
+					[
+						"tag",
+						"Text",
+						"->"
+					],
+					[
+						"url",
+						"Text",
+						"->"
+					],
+					[
+						"timeoutMs",
+						"Integer",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"Questions": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"ConnectionError": {
+			"new()": {
+				"Syntax": "**.new**( *message* : Text; *cause* : Variant )",
+				"Params": [
+					[
+						"message",
+						"Text",
+						"->"
+					],
+					[
+						"cause",
+						"Variant",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"ModelsListResult": {
+			"new()": {
+				"Syntax": "**.new**( *body* : Object )",
+				"Params": [
+					[
+						"body",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"Client": {
+			"new()": {
+				"Syntax": "**.new**( *options* : Object )",
+				"Params": [
+					[
+						"options",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"ModelCard": {
+			"new()": {
+				"Syntax": "**.new**( *card* : Object )",
+				"Params": [
+					[
+						"card",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"_Constants": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		},
+		"SystemOneResult": {
+			"new()": {
+				"Syntax": "**.new**( *body* : Object )",
+				"Params": [
+					[
+						"body",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		}
+	},
+	"TypeSafeError": {
+		"cause": {
+			"Syntax": "cause : Variant"
+		},
+		"message": {
+			"Syntax": "message : Text"
+		},
+		"errCode": {
+			"Syntax": "errCode : Integer"
+		},
+		"name": {
+			"Syntax": "name : Text"
+		}
+	},
+	"_Env": {
+		"read()": {
+			"Syntax": "**.read**( *name* : Text ) : Text",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"Logger": {
+		"redact()": {
+			"Syntax": "**.redact**( *name* : Text; *value* : Text ) : Text",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"redactKey()": {
+			"Syntax": "**.redactKey**( *value* : Text ) : Text",
+			"Params": [
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"redactHeaders()": {
+			"Syntax": "**.redactHeaders**( *headers* : Object ) : Object",
+			"Params": [
+				[
+					"headers",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"warn()": {
+			"Syntax": "**.warn**( *message* : Text )",
+			"Params": [
+				[
+					"message",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"info()": {
+			"Syntax": "**.info**( *message* : Text )",
+			"Params": [
+				[
+					"message",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"debug()": {
+			"Syntax": "**.debug**( *message* : Text )",
+			"Params": [
+				[
+					"message",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"error()": {
+			"Syntax": "**.error**( *message* : Text )",
+			"Params": [
+				[
+					"message",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"enabled()": {
+			"Syntax": "**.enabled**( *lvl* : Text ) : Boolean",
+			"Params": [
+				[
+					"lvl",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"prefix": {
+			"Syntax": "prefix : Text"
+		},
+		"levelRank": {
+			"Syntax": "levelRank : Integer"
+		},
+		"level": {
+			"Syntax": "level : Text"
+		}
+	},
+	"RetryPolicy": {
+		"clone()": {
+			"Syntax": "**.clone**() : cs.jev.RetryPolicy",
+			"Params": [
+				[
+					"",
+					"cs.jev.RetryPolicy",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"sleep()": {
+			"Syntax": "**.sleep**( *ms* : Integer )",
+			"Params": [
+				[
+					"ms",
+					"Integer",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"parseRetryAfterMs()": {
+			"Syntax": "**.parseRetryAfterMs**( *headers* : Object ) : Integer",
+			"Params": [
+				[
+					"headers",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Integer",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"apply()": {
+			"Syntax": "**.apply**( *overrides* : Object ) : cs.jev.RetryPolicy",
+			"Params": [
+				[
+					"overrides",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.jev.RetryPolicy",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"delayMs()": {
+			"Syntax": "**.delayMs**( *attempt* : Integer; *headers* : Object ) : Integer",
+			"Params": [
+				[
+					"attempt",
+					"Integer",
+					"->"
+				],
+				[
+					"headers",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Integer",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isRetryableStatus()": {
+			"Syntax": "**.isRetryableStatus**( *status* : Integer ) : Boolean",
+			"Params": [
+				[
+					"status",
+					"Integer",
+					"->"
+				],
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"retryOnTimeout": {
+			"Syntax": "retryOnTimeout : Boolean"
+		},
+		"respectRetryAfter": {
+			"Syntax": "respectRetryAfter : Boolean"
+		},
+		"maxRetryAfterMs": {
+			"Syntax": "maxRetryAfterMs : Integer"
+		},
+		"backoffMaxMs": {
+			"Syntax": "backoffMaxMs : Integer"
+		},
+		"httpStatuses": {
+			"Syntax": "httpStatuses : Collection"
+		},
+		"backoffJitter": {
+			"Syntax": "backoffJitter : Real"
+		},
+		"retryOnConnectionError": {
+			"Syntax": "retryOnConnectionError : Boolean"
+		},
+		"backoffInitialMs": {
+			"Syntax": "backoffInitialMs : Integer"
+		},
+		"maxRetries": {
+			"Syntax": "maxRetries : Integer"
+		}
+	},
+	"Models": {
+		"list()": {
+			"Syntax": "**.list**( *options* : Object ) : Variant",
+			"Params": [
+				[
+					"options",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Variant",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"client": {
+			"Syntax": "client : cs.jev.Client"
+		}
+	},
+	"_Utils": {
+		"parseRetryAfterMs()": {
+			"Syntax": "**.parseRetryAfterMs**( *headers* : Object ) : Integer",
+			"Params": [
+				[
+					"headers",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Integer",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"requestIdFrom()": {
+			"Syntax": "**.requestIdFrom**( *headers* : Object ) : Text",
+			"Params": [
+				[
+					"headers",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"mergeHeaders()": {
+			"Syntax": "**.mergeHeaders**( *sources* : Collection ) : Object",
+			"Params": [
+				[
+					"sources",
+					"Collection",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isNumeric()": {
+			"Syntax": "**.isNumeric**( *value* : Text ) : Boolean",
+			"Params": [
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"lowerKeys()": {
+			"Syntax": "**.lowerKeys**( *o* : Object ) : Object",
+			"Params": [
+				[
+					"o",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"notEmpty()": {
+			"Syntax": "**.notEmpty**( *o* : Object ) : Boolean",
+			"Params": [
+				[
+					"o",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"assign()": {
+			"Syntax": "**.assign**( *target* : Object; *source* : Object ) : Object",
+			"Params": [
+				[
+					"target",
+					"Object",
+					"->"
+				],
+				[
+					"source",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"stripTrailingSlashes()": {
+			"Syntax": "**.stripTrailingSlashes**( *url* : Text ) : Text",
+			"Params": [
+				[
+					"url",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"trim()": {
+			"Syntax": "**.trim**( *value* : Text ) : Text",
+			"Params": [
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"Result": {
+		"throwIfError()": {
+			"Syntax": "**.throwIfError**()",
+			"Params": [],
+			"Summary": ""
+		},
+		"fail()": {
+			"Syntax": "**.fail**( *error* : Variant ) : cs.jev.Result",
+			"Params": [
+				[
+					"error",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"cs.jev.Result",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"rawBody": {
+			"Syntax": "rawBody : Variant"
+		},
+		"success": {
+			"Syntax": "success : Boolean"
+		},
+		"requestId": {
+			"Syntax": "requestId : Text"
+		},
+		"status": {
+			"Syntax": "status : Integer"
+		},
+		"errors": {
+			"Syntax": "errors : Collection"
+		},
+		"error": {
+			"Syntax": "error : Variant"
+		}
+	},
+	"TimeoutError": {
+		"timeoutMs": {
+			"Syntax": "timeoutMs : Integer"
+		},
+		"_inheritedFrom_": "TransportError"
+	},
+	"APIError": {
+		"isUnprocessable()": {
+			"Syntax": "**.isUnprocessable**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isPermissionDenied()": {
+			"Syntax": "**.isPermissionDenied**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isAuthentication()": {
+			"Syntax": "**.isAuthentication**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isNotFound()": {
+			"Syntax": "**.isNotFound**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isTimeout()": {
+			"Syntax": "**.isTimeout**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isServer()": {
+			"Syntax": "**.isServer**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isRateLimit()": {
+			"Syntax": "**.isRateLimit**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isBadRequest()": {
+			"Syntax": "**.isBadRequest**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"retryAfterMs": {
+			"Syntax": "retryAfterMs : Integer"
+		},
+		"url": {
+			"Syntax": "url : Text"
+		},
+		"headers": {
+			"Syntax": "headers : Object"
+		},
+		"body": {
+			"Syntax": "body : Variant"
+		},
+		"requestId": {
+			"Syntax": "requestId : Text"
+		},
+		"status": {
+			"Syntax": "status : Integer"
+		},
+		"_inheritedFrom_": "TypeSafeError"
+	},
+	"TransportError": {
+		"_inheritedFrom_": "TypeSafeError"
+	},
+	"_AsyncOptions": {
+		"onTerminate()": {
+			"Syntax": "**.onTerminate**( *request* : 4D.HTTPRequest; *event* : Object )",
+			"Params": [
+				[
+					"request",
+					"4D.HTTPRequest",
+					"->"
+				],
+				[
+					"event",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"timeout": {
+			"Syntax": "timeout : Real"
+		},
+		"headers": {
+			"Syntax": "headers : Object"
+		},
+		"body": {
+			"Syntax": "body : Variant"
+		},
+		"dataType": {
+			"Syntax": "dataType : Text"
+		},
+		"method": {
+			"Syntax": "method : Text"
+		}
+	},
+	"Questions": {
+		"validate()": {
+			"Syntax": "**.validate**( *questions* : Object ) : Object",
+			"Params": [
+				[
+					"questions",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"validateQuestions()": {
+			"Syntax": "**.validateQuestions**( *questions* : Object )",
+			"Params": [
+				[
+					"questions",
+					"Object",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"score()": {
+			"Syntax": "**.score**( *instructions* : Variant; *criteria* : Variant ) : Object",
+			"Params": [
+				[
+					"instructions",
+					"Variant",
+					"->"
+				],
+				[
+					"criteria",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"choice()": {
+			"Syntax": "**.choice**( *instructions* : Variant; *criteria* : Variant ) : Object",
+			"Params": [
+				[
+					"instructions",
+					"Variant",
+					"->"
+				],
+				[
+					"criteria",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"noul()": {
+			"Syntax": "**.noul**( *instructions* : Variant; *criteria* : Variant ) : Object",
+			"Params": [
+				[
+					"instructions",
+					"Variant",
+					"->"
+				],
+				[
+					"criteria",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"ConnectionError": {
+		"_inheritedFrom_": "TransportError"
+	},
+	"ModelsListResult": {
+		"models": {
+			"Syntax": "models : Collection"
+		},
+		"_inheritedFrom_": "Result"
+	},
+	"Client": {
+		"list_models()": {
+			"Syntax": "**.list_models**( *options* : Object ) : Variant",
+			"Params": [
+				[
+					"options",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Variant",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"systemOne()": {
+			"Syntax": "**.systemOne**( *state* : Object; *options* : Object ) : Variant",
+			"Params": [
+				[
+					"state",
+					"Object",
+					"->"
+				],
+				[
+					"options",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Variant",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"requestCount": {
+			"Syntax": "requestCount : Integer"
+		},
+		"models": {
+			"Syntax": "models : cs.jev.Models"
+		},
+		"defaultHeaders": {
+			"Syntax": "defaultHeaders : Object"
+		},
+		"retryPolicy": {
+			"Syntax": "retryPolicy : cs.jev.RetryPolicy"
+		},
+		"logger": {
+			"Syntax": "logger : cs.jev.Logger"
+		},
+		"logLevel": {
+			"Syntax": "logLevel : Text"
+		},
+		"timeoutMs": {
+			"Syntax": "timeoutMs : Integer"
+		},
+		"maxRetries": {
+			"Syntax": "maxRetries : Integer"
+		},
+		"model": {
+			"Syntax": "model : Text"
+		},
+		"baseURL": {
+			"Syntax": "baseURL : Text"
+		},
+		"apiKey": {
+			"Syntax": "apiKey : Text"
+		}
+	},
+	"ModelCard": {
+		"releaseDate": {
+			"Syntax": "releaseDate : Text"
+		},
+		"description": {
+			"Syntax": "description : Text"
+		},
+		"name": {
+			"Syntax": "name : Text"
+		}
+	},
+	"_Constants": {
+		"defaultMaxRetryAfterMs()": {
+			"Syntax": "**.defaultMaxRetryAfterMs**() : Integer",
+			"Params": [
+				[
+					"",
+					"Integer",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"defaultBackoffJitter()": {
+			"Syntax": "**.defaultBackoffJitter**() : Real",
+			"Params": [
+				[
+					"",
+					"Real",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"defaultTimeoutMs()": {
+			"Syntax": "**.defaultTimeoutMs**() : Integer",
+			"Params": [
+				[
+					"",
+					"Integer",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"defaultBaseURL()": {
+			"Syntax": "**.defaultBaseURL**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"sdkVersion()": {
+			"Syntax": "**.sdkVersion**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"defaultModel()": {
+			"Syntax": "**.defaultModel**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"defaultBackoffInitialMs()": {
+			"Syntax": "**.defaultBackoffInitialMs**() : Integer",
+			"Params": [
+				[
+					"",
+					"Integer",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"defaultBackoffMaxMs()": {
+			"Syntax": "**.defaultBackoffMaxMs**() : Integer",
+			"Params": [
+				[
+					"",
+					"Integer",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"defaultModelEnv()": {
+			"Syntax": "**.defaultModelEnv**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"defaultMaxRetries()": {
+			"Syntax": "**.defaultMaxRetries**() : Integer",
+			"Params": [
+				[
+					"",
+					"Integer",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"baseURLEnv()": {
+			"Syntax": "**.baseURLEnv**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"apiKeyEnv()": {
+			"Syntax": "**.apiKeyEnv**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"logLevelEnv()": {
+			"Syntax": "**.logLevelEnv**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"runtime()": {
+			"Syntax": "**.runtime**() : Text",
+			"Params": [
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	},
+	"SystemOneResult": {
+		"answer()": {
+			"Syntax": "**.answer**( *name* : Text ) : Variant",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Variant",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"model": {
+			"Syntax": "model : Text"
+		},
+		"usage": {
+			"Syntax": "usage : Object"
+		},
+		"answers": {
+			"Syntax": "answers : Object"
+		},
+		"data": {
+			"Syntax": "data : Object"
+		},
+		"_inheritedFrom_": "Result"
+	}
+}
