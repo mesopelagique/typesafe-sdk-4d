@@ -35,7 +35,7 @@ Function apply($overrides : Object) : cs:C1710.RetryPolicy
 		return This:C1470
 	End if
 	If ($overrides.maxRetries#Null:C1517)
-		This:C1470.maxRetries:=This:C1470._assertNonNegative("retry.maxRetries"; Num:C11($overrides.maxRetries))
+		This:C1470.maxRetries:=This:C1470._assertNonNegativeInteger("retry.maxRetries"; Num:C11($overrides.maxRetries))
 	End if
 	If ($overrides.backoffInitialMs#Null:C1517)
 		This:C1470.backoffInitialMs:=This:C1470._assertNonNegative("retry.backoffInitialMs"; Num:C11($overrides.backoffInitialMs))
@@ -73,6 +73,12 @@ Function apply($overrides : Object) : cs:C1710.RetryPolicy
 	End if
 	return This:C1470
 
+Function _assertNonNegativeInteger($name : Text; $value : Real) : Real
+	If (($value<0) || ($value#Int:C8($value)))
+		throw:C1805(cs:C1710.TypeSafeError.new("`"+$name+"` must be a non-negative integer, got "+String:C10($value)+"."; Null:C1517))
+	End if
+	return $value
+
 Function _assertNonNegative($name : Text; $value : Real) : Real
 	If ($value<0)
 		throw:C1805(cs:C1710.TypeSafeError.new("`"+$name+"` must be non-negative, got "+String:C10($value)+"."; Null:C1517))
@@ -83,8 +89,8 @@ Function _assertNonNegative($name : Text; $value : Real) : Real
 Function isRetryableStatus($status : Integer) : Boolean
 	return This:C1470.httpStatuses.indexOf($status)>=0
 
-// Parse `retry-after-ms`, then `Retry-After` seconds, into milliseconds.
-// Returns -1 when neither header carries a usable delay.
+// Parse `retry-after-ms`, then `Retry-After` as seconds or as an HTTP-date,
+// into milliseconds. Returns -1 when neither header carries a usable delay.
 Function parseRetryAfterMs($headers : Object) : Integer
 	return cs:C1710._Utils.me.parseRetryAfterMs($headers)
 

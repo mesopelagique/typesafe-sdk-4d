@@ -124,7 +124,9 @@ Function systemOne($state : Object; $options : Object) : Variant
 	cs:C1710.Questions.me.validateQuestions($questions)
 	
 	var $payload : Object:={}
-	If (($state#Null:C1517) && (Value type:C1509($state)=Is object:K8:27) && ($state.state#Null:C1517))
+	// An object owning a `state` property is the request; anything else is the state itself.
+	// The property is read by presence, so an explicit `state: Null` stays a state value.
+	If (($state#Null:C1517) && (Value type:C1509($state)=Is object:K8:27) && (Value type:C1509($state.state)#Is undefined:K8:13))
 		// Forward any extra request property, as the JavaScript SDK spreads the request.
 		$utils.assign($payload; $state)
 		$payload.state:=$state.state
@@ -220,17 +222,6 @@ Function _dispatch($callbacks : Object; $result : Object)
 	// MARK:- Transport
 	
 /*
-* Send one request, retrying eligible failures, and return the parsed body.
-* Throws APIError / TimeoutError / ConnectionError rather than returning silently.
-*/
-Function _request($path : Text; $method : Text; $body : Object; $options : Object) : Variant
-	var $outcome : Object:=This:C1470._perform($path; $method; $body; $options)
-	If (Not:C34($outcome.ok))
-		throw:C1805($outcome.error)
-	End if
-	return $outcome.body
-
-/*
 * Send one request with retries and report the result as
 * {ok; body; error; status; headers; requestId}. Never throws for an API or
 * transport failure, so the asynchronous fallback path can reuse it.
@@ -297,7 +288,7 @@ Function _perform($path : Text; $method : Text; $body : Object; $options : Objec
 			$attempt:=$attempt+1
 		Else 
 			$outcome:=This:C1470._outcomeFromResponse($response; $prep.url)
-			This:C1470.logger.info($prep.tag+" <- "+String:C10($outcome.status)+" in "+String:C10($elapsed)+"ms")
+			This:C1470.logger.info($prep.tag+" <- "+String:C10($outcome.status)+" in "+String:C10($elapsed)+"ms"+This:C1470._requestSuffix($outcome.requestId))
 			This:C1470.logger.debug($prep.tag+" <- body "+JSON Stringify:C1217($response.body || Null:C1517))
 			If ($outcome.ok || ($retriesLeft<=0) || (Not:C34($policy.isRetryableStatus($outcome.status))))
 				return $outcome
@@ -353,7 +344,7 @@ Function _completeAsync($async : cs:C1710._AsyncOptions; $request : 4D:C1709.HTT
 		This:C1470.logger.info($async._tag+" "+String:C10($outcome.error.message)+" after "+String:C10($elapsed)+"ms")
 	Else 
 		$outcome:=This:C1470._outcomeFromResponse($response; $async._url)
-		This:C1470.logger.info($async._tag+" <- "+String:C10($outcome.status)+" in "+String:C10($elapsed)+"ms")
+		This:C1470.logger.info($async._tag+" <- "+String:C10($outcome.status)+" in "+String:C10($elapsed)+"ms"+This:C1470._requestSuffix($outcome.requestId))
 		This:C1470.logger.debug($async._tag+" <- body "+JSON Stringify:C1217($response.body || Null:C1517))
 	End if
 	
@@ -383,6 +374,8 @@ Function _prepare($path : Text; $method : Text; $body : Object; $options : Objec
 	$fixed["User-Agent"]:=$sdk
 	$fixed["X-TypeSafe-SDK"]:=$sdk
 	$fixed["X-TypeSafe-Runtime"]:=$k.runtime()
+	// Only a retry sets this; a caller's own value is dropped.
+	$fixed["X-TypeSafe-Retry-Count"]:=Null:C1517
 	If ($body#Null:C1517)
 		$fixed["Content-Type"]:="application/json"
 	End if
@@ -397,6 +390,13 @@ Function _prepare($path : Text; $method : Text; $body : Object; $options : Objec
 	$prep.policy:=$policy
 	$prep.tag:="#"+String:C10(This:C1470.requestCount)+" "+$method+" "+$path
 	return $prep
+
+// " (request <id>)" for a response that carries one, "" otherwise.
+Function _requestSuffix($requestId : Text) : Text
+	If ($requestId="")
+		return ""
+	End if
+	return " (request "+$requestId+")"
 
 // Turn one HTTP response into an outcome object.
 Function _outcomeFromResponse($response : Object; $url : Text) : Object

@@ -28,7 +28,7 @@
 		},
 		"Logger": {
 			"new()": {
-				"Syntax": "**.new**( *level* : Text; *source* : Text )",
+				"Syntax": "**.new**( *level* : Text; *source* : Text; *sink* : Object )",
 				"Params": [
 					[
 						"level",
@@ -38,6 +38,11 @@
 					[
 						"source",
 						"Text",
+						"->"
+					],
+					[
+						"sink",
+						"Object",
 						"->"
 					]
 				],
@@ -432,6 +437,9 @@
 			],
 			"Summary": ""
 		},
+		"sink": {
+			"Syntax": "sink : Object"
+		},
 		"prefix": {
 			"Syntax": "prefix : Text"
 		},
@@ -481,17 +489,17 @@
 			],
 			"Summary": ""
 		},
-		"apply()": {
-			"Syntax": "**.apply**( *overrides* : Object ) : cs.jev.RetryPolicy",
+		"isRetryableStatus()": {
+			"Syntax": "**.isRetryableStatus**( *status* : Integer ) : Boolean",
 			"Params": [
 				[
-					"overrides",
-					"Object",
+					"status",
+					"Integer",
 					"->"
 				],
 				[
 					"",
-					"cs.jev.RetryPolicy",
+					"Boolean",
 					"<-"
 				]
 			],
@@ -518,17 +526,17 @@
 			],
 			"Summary": ""
 		},
-		"isRetryableStatus()": {
-			"Syntax": "**.isRetryableStatus**( *status* : Integer ) : Boolean",
+		"apply()": {
+			"Syntax": "**.apply**( *overrides* : Object ) : cs.jev.RetryPolicy",
 			"Params": [
 				[
-					"status",
-					"Integer",
+					"overrides",
+					"Object",
 					"->"
 				],
 				[
 					"",
-					"Boolean",
+					"cs.jev.RetryPolicy",
 					"<-"
 				]
 			],
@@ -584,6 +592,91 @@
 		}
 	},
 	"_Utils": {
+		"redact()": {
+			"Syntax": "**.redact**( *name* : Text; *value* : Text ) : Text",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"redactHeaders()": {
+			"Syntax": "**.redactHeaders**( *headers* : Object ) : Object",
+			"Params": [
+				[
+					"headers",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"redactKey()": {
+			"Syntax": "**.redactKey**( *value* : Text ) : Text",
+			"Params": [
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"trim()": {
+			"Syntax": "**.trim**( *value* : Text ) : Text",
+			"Params": [
+				[
+					"value",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"stripTrailingSlashes()": {
+			"Syntax": "**.stripTrailingSlashes**( *url* : Text ) : Text",
+			"Params": [
+				[
+					"url",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
 		"parseRetryAfterMs()": {
 			"Syntax": "**.parseRetryAfterMs**( *headers* : Object ) : Integer",
 			"Params": [
@@ -696,38 +789,6 @@
 				[
 					"",
 					"Object",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"stripTrailingSlashes()": {
-			"Syntax": "**.stripTrailingSlashes**( *url* : Text ) : Text",
-			"Params": [
-				[
-					"url",
-					"Text",
-					"->"
-				],
-				[
-					"",
-					"Text",
-					"<-"
-				]
-			],
-			"Summary": ""
-		},
-		"trim()": {
-			"Syntax": "**.trim**( *value* : Text ) : Text",
-			"Params": [
-				[
-					"value",
-					"Text",
-					"->"
-				],
-				[
-					"",
-					"Text",
 					"<-"
 				]
 			],

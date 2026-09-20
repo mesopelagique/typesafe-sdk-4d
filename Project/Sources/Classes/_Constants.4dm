@@ -18,8 +18,9 @@ function defaultBaseURL() : Text
 function defaultModel() : Text
 	return "jev-latest"
 
+// Mirrors the upstream JavaScript SDK release this port follows. See Documentation/parity.md.
 function sdkVersion() : Text
-	return "1.0.0"
+	return "0.6.0"
 
 // Runtime description for the X-TypeSafe-Runtime header.
 function runtime() : Text
